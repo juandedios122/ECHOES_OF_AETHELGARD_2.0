@@ -1,8 +1,8 @@
 extends Control
 
-@onready var btn_play     : Button = $VBoxContainer/ButtonPlay
-@onready var btn_gacha    : Button = $VBoxContainer/ButtonGacha
-@onready var btn_settings : Button = $VBoxContainer/ButtonSettings
+@onready var btn_play     : TextureButton = $ButtonPlay
+@onready var btn_gacha    : TextureButton = $ButtonGacha
+@onready var btn_settings : TextureButton = $ButtonSettings
 @onready var logo         : Label  = $Logo
 
 func _ready() -> void:
@@ -45,7 +45,7 @@ func _animate_entrance() -> void:
 	# Botones: solo fade, SIN mover position (el VBoxContainer los controla)
 	var btns := [btn_play, btn_gacha, btn_settings]
 	for i in btns.size():
-		var b : Button = btns[i]
+		var b : TextureButton = btns[i]
 		b.modulate.a = 0.0
 		var t := create_tween()
 		t.tween_interval(0.15 + i * 0.12)

@@ -1,4 +1,2 @@
+res://scenes/screens/MainMenu.tscn
 res://scripts/screens/main_menu.gd
-res://scripts/utils/SceneManager.gd
-res://scripts/transitions/scene_transition.gd
-res://scripts/screens/lobby.gd

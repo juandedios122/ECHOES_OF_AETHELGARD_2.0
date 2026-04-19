@@ -1,9 +1,12 @@
+TextureButton
+TextureRect
+Sprite2D
+ParallaxBackground
+TextEdit
 Button
 HBoxContainer
 VBoxContainer
 Label
-TextureRect
 Control
-ParallaxBackground
 Node
 ColorRect

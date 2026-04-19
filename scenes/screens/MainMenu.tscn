@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://cjboqh2is8f1"]
 
 [ext_resource type="Script" uid="uid://bdqlrfewfqs2j" path="res://scripts/screens/main_menu.gd" id="1_d0hcd"]
+[ext_resource type="Texture2D" uid="uid://dkfebes82nhva" path="res://assets/ui/buttons/btn_jugar.png" id="2_bse5q"]
+[ext_resource type="Texture2D" uid="uid://bhevq3mbl057u" path="res://assets/sprites/backgrounds/bg_menu.png" id="2_wk6b2"]
+[ext_resource type="Texture2D" uid="uid://cm2j3754u2oap" path="res://assets/ui/buttons/btn_ajustes.png" id="4_wk6b2"]
+[ext_resource type="Texture2D" uid="uid://brxslqgxmrfh0" path="res://assets/ui/buttons/btn_invocar.png" id="5_6h67i"]
 
 [node name="MainMenu" type="Control" unique_id=28033831]
 layout_mode = 3
@@ -11,24 +15,26 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_d0hcd")
 
-[node name="Background" type="ColorRect" parent="." unique_id=1494712900]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.08, 0.05, 0.02, 1)
+[node name="Background" type="TextureRect" parent="." unique_id=1415396196]
+layout_mode = 0
+offset_left = -6.0
+offset_top = -22.000002
+offset_right = 1666.0
+offset_bottom = 919.0
+scale = Vector2(1.148994, 1.1644363)
+texture = ExtResource("2_wk6b2")
+stretch_mode = 6
+metadata/_edit_lock_ = true
 
 [node name="Logo" type="Label" parent="." unique_id=1981050548]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -500.0
-offset_top = 80.0
-offset_right = 500.0
-offset_bottom = 180.0
+offset_left = -541.0
+offset_top = 67.0
+offset_right = 459.0
+offset_bottom = 167.0
 grow_horizontal = 2
 text = "ECHOES OF AETHELGARD"
 horizontal_alignment = 1
@@ -40,40 +46,56 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -230.0
-offset_top = -160.0
-offset_right = 230.0
-offset_bottom = 160.0
+offset_left = -234.0
+offset_top = -335.0
+offset_right = 226.0
+offset_bottom = 163.0
 grow_horizontal = 2
 grow_vertical = 2
-alignment = 1
 theme_override_constants/separation = 28
-
-[node name="ButtonPlay" type="Button" parent="VBoxContainer" unique_id=410804379]
-custom_minimum_size = Vector2(460, 86)
-layout_mode = 2
-text = "JUGAR"
-
-[node name="ButtonGacha" type="Button" parent="VBoxContainer" unique_id=1478100620]
-custom_minimum_size = Vector2(460, 86)
-layout_mode = 2
-text = "INVOCAR"
-
-[node name="ButtonSettings" type="Button" parent="VBoxContainer" unique_id=1430776834]
-custom_minimum_size = Vector2(460, 86)
-layout_mode = 2
-text = "AJUSTES"
+alignment = 1
 
 [node name="VersionLabel" type="Label" parent="." unique_id=1160206024]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-anchor_top = 1.0
 offset_left = -180.0
 offset_top = -36.0
 offset_right = -20.0
 offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
 text = "v0.1.0 Alpha"
 horizontal_alignment = 2
+
+[node name="ButtonPlay" type="TextureButton" parent="." unique_id=1408311521]
+layout_mode = 0
+offset_left = 673.0
+offset_top = 130.0
+offset_right = 2209.0
+offset_bottom = 1154.0
+scale = Vector2(0.21018958, 0.23099153)
+texture_normal = ExtResource("2_bse5q")
+
+[node name="ButtonSettings" type="TextureButton" parent="." unique_id=690485414]
+custom_minimum_size = Vector2(460, 86)
+layout_mode = 0
+offset_left = 676.0
+offset_top = 694.0
+offset_right = 2212.0
+offset_bottom = 1718.0
+scale = Vector2(0.235193, 0.24547523)
+texture_normal = ExtResource("4_wk6b2")
+
+[node name="ButtonGacha" type="TextureButton" parent="." unique_id=1976366439]
+custom_minimum_size = Vector2(460, 86)
+layout_mode = 0
+offset_left = 628.0
+offset_top = 349.0
+offset_right = 2164.0
+offset_bottom = 1373.0
+scale = Vector2(0.24148148, 0.19901828)
+texture_normal = ExtResource("5_6h67i")
