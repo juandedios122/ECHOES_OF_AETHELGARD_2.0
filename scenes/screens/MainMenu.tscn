@@ -4,38 +4,76 @@
 
 [node name="MainMenu" type="Control" unique_id=28033831]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_d0hcd")
 
-[node name="Background" type="TextureRect" parent="." unique_id=1494712900]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Background" type="ColorRect" parent="." unique_id=1494712900]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.08, 0.05, 0.02, 1)
 
-[node name="Logo" type="TextureRect" parent="." unique_id=1981050548]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Logo" type="Label" parent="." unique_id=1981050548]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -500.0
+offset_top = 80.0
+offset_right = 500.0
+offset_bottom = 180.0
+grow_horizontal = 2
+text = "ECHOES OF AETHELGARD"
+horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1923318943]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -230.0
+offset_top = -160.0
+offset_right = 230.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+theme_override_constants/separation = 28
 
 [node name="ButtonPlay" type="Button" parent="VBoxContainer" unique_id=410804379]
+custom_minimum_size = Vector2(460, 86)
 layout_mode = 2
 text = "JUGAR"
 
 [node name="ButtonGacha" type="Button" parent="VBoxContainer" unique_id=1478100620]
+custom_minimum_size = Vector2(460, 86)
 layout_mode = 2
 text = "INVOCAR"
 
 [node name="ButtonSettings" type="Button" parent="VBoxContainer" unique_id=1430776834]
+custom_minimum_size = Vector2(460, 86)
 layout_mode = 2
 text = "AJUSTES"
 
 [node name="VersionLabel" type="Label" parent="." unique_id=1160206024]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "v0.1.0"
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+anchor_top = 1.0
+offset_left = -180.0
+offset_top = -36.0
+offset_right = -20.0
+offset_bottom = -10.0
+text = "v0.1.0 Alpha"
+horizontal_alignment = 2

@@ -1,7 +1,4 @@
-res://scripts/utils/SceneManager.gd
-res://scenes/transitions/SceneTransition.tscn
-res://scenes/transitions/scene_transition.gd
-res://scenes/screens/MainMenu.tscn
 res://scripts/screens/main_menu.gd
-res://scenes/screens/Lobby.tscn
+res://scripts/utils/SceneManager.gd
+res://scripts/transitions/scene_transition.gd
 res://scripts/screens/lobby.gd
