@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://fq5m3qde43p4"]
+
+[ext_resource type="Script" uid="uid://c4afms6tks2uj" path="res://scripts/transitions/scene_transition.gd" id="1_0sr2p"]
+
+[node name="SceneTransition" type="Node" unique_id=1337620092]
+script = ExtResource("1_0sr2p")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1347348620]
+offset_right = 1155.0
+offset_bottom = 645.0
+color = Color(0, 0, 0, 1)

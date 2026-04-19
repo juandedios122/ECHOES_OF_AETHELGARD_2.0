@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://tit7xe7h0l17"]
+
+[ext_resource type="Script" uid="uid://vkchx053r1s5" path="res://scripts/screens/lobby.gd" id="1_x2kwc"]
+
+[node name="Lobby" type="Control" unique_id=1035648123]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_x2kwc")
+
+[node name="Background" type="TextureRect" parent="." unique_id=492312512]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TopBar" type="HBoxContainer" parent="." unique_id=2052545321]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PlayerAvatar" type="TextureRect" parent="TopBar" unique_id=1579504026]
+layout_mode = 2
+
+[node name="PlayerName" type="Label" parent="TopBar" unique_id=1708294175]
+layout_mode = 2
+
+[node name="CurrencyDisplay" type="HBoxContainer" parent="TopBar" unique_id=1174215612]
+layout_mode = 2
+
+[node name="MainContent" type="VBoxContainer" parent="." unique_id=539251768]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="QuickPlay" type="Button" parent="MainContent" unique_id=1448214645]
+layout_mode = 2
+
+[node name="Exploration" type="Button" parent="MainContent" unique_id=318258867]
+layout_mode = 2
+
+[node name="Gacha" type="Button" parent="MainContent" unique_id=1585765818]
+layout_mode = 2
+
+[node name="BottomNav" type="HBoxContainer" parent="." unique_id=1789303585]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NavHome" type="Button" parent="BottomNav" unique_id=949242668]
+layout_mode = 2
+
+[node name="NavHeroes" type="Button" parent="BottomNav" unique_id=1800520439]
+layout_mode = 2
+
+[node name="NavShop" type="Button" parent="BottomNav" unique_id=2092994861]
+layout_mode = 2
