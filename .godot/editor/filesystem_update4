@@ -1,2 +1,7 @@
 res://scenes/screens/MainMenu.tscn
 res://scripts/screens/main_menu.gd
+res://scripts/core/PlayerData.gd
+res://scripts/screens/lobby.gd
+res://scripts/core/GachaSystem.gd
+res://scenes/screens/GachaScreen.tscn
+res://scripts/screens/gacha_screen.gd

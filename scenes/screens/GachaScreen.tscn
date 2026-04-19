@@ -1,0 +1,182 @@
+[gd_scene format=3 uid="uid://di2jhshlp41bf"]
+
+[ext_resource type="Script" uid="uid://g81w76wwlmkk" path="res://scripts/screens/gacha_screen.gd" id="1_gacha"]
+
+[node name="GachaScreen" type="Control" unique_id=100000001]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gacha")
+
+[node name="Background" type="ColorRect" parent="." unique_id=100000002]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05, 0.03, 0.08, 1)
+
+[node name="TopBar" type="HBoxContainer" parent="." unique_id=100000003]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 20
+
+[node name="BtnBack" type="Button" parent="TopBar" unique_id=100000004]
+custom_minimum_size = Vector2(120, 60)
+layout_mode = 2
+text = "< VOLVER"
+
+[node name="Title" type="Label" parent="TopBar" unique_id=100000005]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "INVOCACION"
+horizontal_alignment = 1
+
+[node name="GemsDisplay" type="HBoxContainer" parent="TopBar" unique_id=100000006]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 10
+
+[node name="GemsIcon" type="ColorRect" parent="TopBar/GemsDisplay" unique_id=100000007]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+color = Color(0.4, 0.2, 0.9, 1)
+
+[node name="GemsLabel" type="Label" parent="TopBar/GemsDisplay" unique_id=100000008]
+layout_mode = 2
+text = "0"
+
+[node name="ResultPanel" type="CenterContainer" parent="." unique_id=100000009]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -220.0
+offset_right = 500.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HeroCard" type="PanelContainer" parent="ResultPanel" unique_id=100000010]
+visible = false
+custom_minimum_size = Vector2(340, 420)
+layout_mode = 2
+
+[node name="CardContent" type="VBoxContainer" parent="ResultPanel/HeroCard" unique_id=100000011]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="RarityLabel" type="Label" parent="ResultPanel/HeroCard/CardContent" unique_id=100000012]
+layout_mode = 2
+text = "LEGENDARIO"
+horizontal_alignment = 1
+
+[node name="HeroColor" type="ColorRect" parent="ResultPanel/HeroCard/CardContent" unique_id=100000013]
+custom_minimum_size = Vector2(280, 220)
+layout_mode = 2
+color = Color(1, 0.84, 0, 1)
+
+[node name="HeroName" type="Label" parent="ResultPanel/HeroCard/CardContent" unique_id=100000014]
+layout_mode = 2
+text = "Vaelthorn"
+horizontal_alignment = 1
+
+[node name="HeroDesc" type="Label" parent="ResultPanel/HeroCard/CardContent" unique_id=100000015]
+layout_mode = 2
+text = "El último dragón"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="StatsRow" type="HBoxContainer" parent="ResultPanel/HeroCard/CardContent" unique_id=100000016]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="AtkLabel" type="Label" parent="ResultPanel/HeroCard/CardContent/StatsRow" unique_id=100000017]
+layout_mode = 2
+text = "ATK: 420"
+
+[node name="HpLabel" type="Label" parent="ResultPanel/HeroCard/CardContent/StatsRow" unique_id=100000018]
+layout_mode = 2
+text = "HP: 1200"
+
+[node name="MultiPanel" type="GridContainer" parent="." unique_id=100000019]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -600.0
+offset_top = -200.0
+offset_right = 600.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 5
+
+[node name="PityBar" type="VBoxContainer" parent="." unique_id=100000020]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -180.0
+offset_right = 300.0
+offset_bottom = -110.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="PityLabel" type="Label" parent="PityBar" unique_id=100000021]
+layout_mode = 2
+text = "Pity: 0 / 90"
+horizontal_alignment = 1
+
+[node name="PityProgress" type="ProgressBar" parent="PityBar" unique_id=100000022]
+custom_minimum_size = Vector2(600, 20)
+layout_mode = 2
+max_value = 90.0
+
+[node name="ButtonsRow" type="HBoxContainer" parent="." unique_id=100000023]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -380.0
+offset_top = -90.0
+offset_right = 380.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="BtnSingle" type="Button" parent="ButtonsRow" unique_id=100000024]
+custom_minimum_size = Vector2(300, 70)
+layout_mode = 2
+text = "INVOCAR x1 — 10 Gemas"
+
+[node name="BtnMulti" type="Button" parent="ButtonsRow" unique_id=100000025]
+custom_minimum_size = Vector2(300, 70)
+layout_mode = 2
+text = "INVOCAR x10 — 100 Gemas"

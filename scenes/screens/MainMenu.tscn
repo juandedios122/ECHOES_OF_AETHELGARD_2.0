@@ -12,22 +12,17 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -64.0
-offset_top = -30.0
-offset_right = -64.0
-offset_bottom = -30.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.0816606, 1.1189252)
 script = ExtResource("1_d0hcd")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1415396196]
-layout_mode = 0
-offset_left = 62.866287
-offset_top = 29.492586
-offset_right = 1734.8663
-offset_bottom = 970.4926
-scale = Vector2(1.0590017, 1.0259858)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_wk6b2")
 stretch_mode = 6
 
@@ -36,10 +31,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -541.0
-offset_top = 67.0
-offset_right = 459.0
-offset_bottom = 167.0
+offset_left = -500.0
+offset_top = 60.0
+offset_right = 500.0
+offset_bottom = 160.0
 grow_horizontal = 2
 text = "ECHOES OF AETHELGARD"
 horizontal_alignment = 1
@@ -51,29 +46,30 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -299.90387
-offset_top = -294.22845
-offset_right = 1059.0962
-offset_bottom = 1376.7716
+offset_left = -242.0
+offset_top = -287.00006
+offset_right = 1117.0
+offset_bottom = 1376.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.38785407, 0.31208885)
-theme_override_constants/separation = 28
+scale = Vector2(0.37760755, 0.38326776)
+theme_override_constants/separation = 24
 alignment = 1
 
 [node name="ButtonPlay" type="TextureButton" parent="VBoxContainer" unique_id=1408311521]
-layout_mode = 2
-texture_normal = ExtResource("2_bse5q")
-
-[node name="ButtonSettings" type="TextureButton" parent="VBoxContainer" unique_id=690485414]
 custom_minimum_size = Vector2(460, 86)
 layout_mode = 2
-texture_normal = ExtResource("4_wk6b2")
+texture_normal = ExtResource("2_bse5q")
 
 [node name="ButtonGacha" type="TextureButton" parent="VBoxContainer" unique_id=1976366439]
 custom_minimum_size = Vector2(460, 86)
 layout_mode = 2
 texture_normal = ExtResource("5_6h67i")
+
+[node name="ButtonSettings" type="TextureButton" parent="VBoxContainer" unique_id=690485414]
+custom_minimum_size = Vector2(460, 86)
+layout_mode = 2
+texture_normal = ExtResource("4_wk6b2")
 
 [node name="VersionLabel" type="Label" parent="." unique_id=1160206024]
 layout_mode = 1
@@ -82,10 +78,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -259.5901
-offset_top = -114.788086
-offset_right = -99.59009
-offset_bottom = -88.788086
+offset_left = -200.0
+offset_top = -40.0
+offset_right = -20.0
+offset_bottom = -10.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "v0.1.0 Alpha"

@@ -16,6 +16,8 @@ config/features=PackedStringArray("4.6", "Mobile")
 
 [autoload]
 
+PlayerData="*res://scripts/core/PlayerData.gd"
+GachaSystem="*res://scripts/core/GachaSystem.gd"
 SceneManager="*res://scripts/utils/SceneManager.gd"
 
 [display]

@@ -7,6 +7,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_x2kwc")
 
 [node name="Background" type="ColorRect" parent="." unique_id=492312512]
@@ -18,32 +20,64 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.08, 0.05, 0.02, 1)
 
-[node name="TopBar" type="HBoxContainer" parent="." unique_id=2052545321]
+[node name="TopBar" type="PanelContainer" parent="." unique_id=2052545321]
 layout_mode = 1
 anchors_preset = 12
-anchor_top = 0.0
 anchor_right = 1.0
-anchor_bottom = 0.0
-offset_bottom = 80.0
-theme_override_constants/separation = 16
+offset_bottom = 90.0
+grow_horizontal = 2
 
-[node name="PlayerName" type="Label" parent="TopBar" unique_id=1708294175]
+[node name="TopBarContent" type="HBoxContainer" parent="TopBar" unique_id=2052545322]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="PlayerInfo" type="HBoxContainer" parent="TopBar/TopBarContent" unique_id=1708294176]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Héroe"
+theme_override_constants/separation = 16
 
-[node name="CurrencyDisplay" type="HBoxContainer" parent="TopBar" unique_id=1174215612]
+[node name="AvatarRect" type="ColorRect" parent="TopBar/TopBarContent/PlayerInfo" unique_id=1579504026]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+color = Color(0.3, 0.2, 0.1, 1)
+
+[node name="PlayerName" type="Label" parent="TopBar/TopBarContent/PlayerInfo" unique_id=1708294175]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Viajero"
+
+[node name="CurrencyDisplay" type="HBoxContainer" parent="TopBar/TopBarContent" unique_id=1174215612]
 layout_mode = 2
 size_flags_horizontal = 8
-theme_override_constants/separation = 24
+theme_override_constants/separation = 40
 
-[node name="GoldLabel" type="Label" parent="TopBar/CurrencyDisplay" unique_id=3391000002]
+[node name="GoldContainer" type="HBoxContainer" parent="TopBar/TopBarContent/CurrencyDisplay" unique_id=3391000010]
 layout_mode = 2
-text = "Oro: 0"
+theme_override_constants/separation = 8
 
-[node name="GemsLabel" type="Label" parent="TopBar/CurrencyDisplay" unique_id=3391000003]
+[node name="GoldIcon" type="ColorRect" parent="TopBar/TopBarContent/CurrencyDisplay/GoldContainer" unique_id=3391000011]
+custom_minimum_size = Vector2(28, 28)
 layout_mode = 2
-text = "Gemas: 0"
+color = Color(1, 0.84, 0, 1)
+
+[node name="GoldLabel" type="Label" parent="TopBar/TopBarContent/CurrencyDisplay/GoldContainer" unique_id=3391000002]
+layout_mode = 2
+size_flags_vertical = 4
+text = "500"
+
+[node name="GemsContainer" type="HBoxContainer" parent="TopBar/TopBarContent/CurrencyDisplay" unique_id=3391000020]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="GemsIcon" type="ColorRect" parent="TopBar/TopBarContent/CurrencyDisplay/GemsContainer" unique_id=3391000021]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+color = Color(0.4, 0.2, 0.9, 1)
+
+[node name="GemsLabel" type="Label" parent="TopBar/TopBarContent/CurrencyDisplay/GemsContainer" unique_id=3391000003]
+layout_mode = 2
+size_flags_vertical = 4
+text = "50"
 
 [node name="MainContent" type="HBoxContainer" parent="." unique_id=539251768]
 layout_mode = 1
@@ -52,25 +86,27 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -400.0
-offset_top = -80.0
-offset_right = 400.0
-offset_bottom = 80.0
-theme_override_constants/separation = 32
+offset_left = -450.0
+offset_top = -100.0
+offset_right = 450.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
 alignment = 1
 
 [node name="QuickPlay" type="Button" parent="MainContent" unique_id=1448214645]
-custom_minimum_size = Vector2(220, 100)
+custom_minimum_size = Vector2(260, 120)
 layout_mode = 2
 text = "COMBATE"
 
 [node name="Exploration" type="Button" parent="MainContent" unique_id=318258867]
-custom_minimum_size = Vector2(220, 100)
+custom_minimum_size = Vector2(260, 120)
 layout_mode = 2
 text = "EXPLORAR"
 
 [node name="Gacha" type="Button" parent="MainContent" unique_id=1585765818]
-custom_minimum_size = Vector2(220, 100)
+custom_minimum_size = Vector2(260, 120)
 layout_mode = 2
 text = "INVOCAR"
 
@@ -81,21 +117,22 @@ anchor_left = 0.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -70.0
+offset_top = -80.0
+grow_horizontal = 2
 alignment = 1
-theme_override_constants/separation = 40
+theme_override_constants/separation = 60
 
 [node name="NavHome" type="Button" parent="BottomNav" unique_id=949242668]
-custom_minimum_size = Vector2(180, 60)
+custom_minimum_size = Vector2(200, 70)
 layout_mode = 2
 text = "INICIO"
 
 [node name="NavHeroes" type="Button" parent="BottomNav" unique_id=1800520439]
-custom_minimum_size = Vector2(180, 60)
+custom_minimum_size = Vector2(200, 70)
 layout_mode = 2
 text = "HEROES"
 
 [node name="NavShop" type="Button" parent="BottomNav" unique_id=2092994861]
-custom_minimum_size = Vector2(180, 60)
+custom_minimum_size = Vector2(200, 70)
 layout_mode = 2
 text = "TIENDA"
