@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="HeroData" format=3 uid="uid://yjchd8h75mj1"]
+
+[ext_resource type="Script" uid="uid://drjcyjcx7741a" path="res://scripts/core/Hero_Data.gd" id="1_52p2o"]
+
+[resource]
+script = ExtResource("1_52p2o")
+id = "archer"
+hero_name = "archer"
+rarity = 1
+desc = "archer"
+color = Color(0, 0, 0, 1)
+metadata/_custom_type_script = "uid://drjcyjcx7741a"

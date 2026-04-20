@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://bykjwoocbyb70"]
+
+[ext_resource type="Script" uid="uid://d201aqrnv77lm" path="res://scripts/screens/exploration_map.gd" id="1_exmap"]
+
+[node name="ExplorationMap" type="Control" unique_id=200000001]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_exmap")
+
+[node name="Background" type="ColorRect" parent="." unique_id=200000002]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.06, 0.04, 0.02, 1)
+
+[node name="TopBar" type="HBoxContainer" parent="." unique_id=200000003]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 20
+
+[node name="BtnBack" type="Button" parent="TopBar" unique_id=200000004]
+custom_minimum_size = Vector2(140, 60)
+layout_mode = 2
+text = "< LOBBY"
+
+[node name="MapTitle" type="Label" parent="TopBar" unique_id=200000005]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "MAPA DE EXPLORACION"
+horizontal_alignment = 1
+
+[node name="StaminaDisplay" type="HBoxContainer" parent="TopBar" unique_id=200000006]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 10
+
+[node name="StaminaLabel" type="Label" parent="TopBar/StaminaDisplay" unique_id=200000007]
+layout_mode = 2
+text = "Stamina: 5/5"
+
+[node name="MapContainer" type="Control" parent="." unique_id=200000008]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 80.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PathLines" type="Control" parent="MapContainer" unique_id=200000009]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NodesContainer" type="Control" parent="MapContainer" unique_id=200000010]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NodeInfoPanel" type="PanelContainer" parent="." unique_id=200000011]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -220.0
+offset_right = 400.0
+offset_bottom = -70.0
+grow_vertical = 0
+
+[node name="InfoContent" type="VBoxContainer" parent="NodeInfoPanel" unique_id=200000012]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="NodeName" type="Label" parent="NodeInfoPanel/InfoContent" unique_id=200000013]
+layout_mode = 2
+text = "Mazmorra Oscura"
+horizontal_alignment = 1
+
+[node name="NodeDesc" type="Label" parent="NodeInfoPanel/InfoContent" unique_id=200000014]
+layout_mode = 2
+text = "Nivel 1 — Enemigos débiles"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="BtnEnter" type="Button" parent="NodeInfoPanel/InfoContent" unique_id=200000015]
+custom_minimum_size = Vector2(340, 60)
+layout_mode = 2
+text = "ENTRAR"
+
+[node name="BottomBar" type="HBoxContainer" parent="." unique_id=200000016]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -70.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="ChapterLabel" type="Label" parent="BottomBar" unique_id=200000017]
+layout_mode = 2
+text = "Capítulo 1 — Las Ruinas de Aethelgard"

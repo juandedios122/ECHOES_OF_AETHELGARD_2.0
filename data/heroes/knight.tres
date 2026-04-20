@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="HeroData" format=3 uid="uid://dtn1w4hg5k6g4"]
+
+[ext_resource type="Script" uid="uid://drjcyjcx7741a" path="res://scripts/core/Hero_Data.gd" id="1_oqrbp"]
+
+[resource]
+script = ExtResource("1_oqrbp")
+id = "knight"
+hero_name = "Sir Aldric"
+desc = "Caballero leal del reino"
+atk = 120
+hp = 800
+color = Color(0.47843137, 0.54901963, 0.6, 1)
+metadata/_custom_type_script = "uid://drjcyjcx7741a"

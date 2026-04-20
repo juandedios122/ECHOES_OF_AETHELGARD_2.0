@@ -5,44 +5,26 @@ extends Node
 enum Rarity { COMMON, RARE, EPIC, LEGENDARY }
 
 # ── Pool de personajes ────────────────────────────────────────────
-const HERO_POOL := [
-	{
-		"id"     : "knight",
-		"name"   : "Sir Aldric",
-		"rarity" : Rarity.COMMON,
-		"desc"   : "Caballero leal del reino",
-		"atk"    : 120,
-		"hp"     : 800,
-		"color"  : Color("#7A8C99"),  # gris acero
-	},
-	{
-		"id"     : "archer",
-		"name"   : "Lyria Voss",
-		"rarity" : Rarity.RARE,
-		"desc"   : "Arquera élfica de los bosques",
-		"atk"    : 180,
-		"hp"     : 600,
-		"color"  : Color("#4CAF50"),  # verde
-	},
-	{
-		"id"     : "mage",
-		"name"   : "Zephyr Ashcroft",
-		"rarity" : Rarity.EPIC,
-		"desc"   : "Mago del fuego antiguo",
-		"atk"    : 260,
-		"hp"     : 450,
-		"color"  : Color("#9C27B0"),  # púrpura
-	},
-	{
-		"id"     : "dragon",
-		"name"   : "Vaelthorn",
-		"rarity" : Rarity.LEGENDARY,
-		"desc"   : "El último dragón de Aethelgard",
-		"atk"    : 420,
-		"hp"     : 1200,
-		"color"  : Color("#FFD700"),  # dorado
-	},
-]
+# Reemplaza la constante HERO_POOL y agrega esto arriba del todo
+var HERO_POOL : Array[HeroData] = []
+
+func _ready() -> void:
+	_load_heroes()
+
+func _load_heroes() -> void:
+	var dir := DirAccess.open("res://data/heroes/")
+	if not dir:
+		push_error("Carpeta res://data/heroes/ no existe")
+		return
+	dir.list_dir_begin()
+	var file := dir.get_next()
+	while file != "":
+		if file.ends_with(".tres"):
+			var hero := load("res://data/heroes/" + file) as HeroData
+			if hero:
+				HERO_POOL.append(hero)
+		file = dir.get_next()
+	dir.list_dir_end()
 
 # ── Probabilidades base ───────────────────────────────────────────
 const RATES := {
@@ -101,16 +83,17 @@ func get_rarity_color(rarity: Rarity) -> Color:
 # Lógica interna
 # ─────────────────────────────────────────────────────────────────
 
-func _roll() -> Dictionary:
+func _roll() -> HeroData:
 	pity_counter += 1
 	var rarity := _determine_rarity()
-	pity_counter = 0 if rarity == Rarity.LEGENDARY else pity_counter
+	if rarity == 3:  # LEGENDARY
+		pity_counter = 0
 	var hero := _pick_hero_of_rarity(rarity)
-	# Agrega al inventario del jugador
-	if not PlayerData.all_heroes.has(hero["id"]):
-		PlayerData.all_heroes.append(hero["id"])
+	if not PlayerData.all_heroes.has(hero.id):
+		PlayerData.all_heroes.append(hero.id)
 		PlayerData.save_data()
 	return hero
+
 
 func _determine_rarity() -> Rarity:
 	# Pity: si llegó a 90 sin legendario, fuerza legendario
@@ -125,8 +108,8 @@ func _determine_rarity() -> Rarity:
 			return rarity
 	return Rarity.COMMON
 
-func _pick_hero_of_rarity(rarity: Rarity) -> Dictionary:
-	var pool := HERO_POOL.filter(func(h): return h["rarity"] == rarity)
+func _pick_hero_of_rarity(rarity: int) -> HeroData:
+	var pool := HERO_POOL.filter(func(h): return h.rarity == rarity)
 	if pool.is_empty():
 		return HERO_POOL[0]
 	return pool[randi() % pool.size()]

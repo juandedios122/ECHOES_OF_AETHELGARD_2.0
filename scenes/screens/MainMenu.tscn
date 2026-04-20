@@ -52,7 +52,6 @@ offset_right = 1117.0
 offset_bottom = 1376.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.37760755, 0.38326776)
 theme_override_constants/separation = 24
 alignment = 1
 

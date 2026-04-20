@@ -54,19 +54,13 @@ func _on_multi() -> void:
 	_show_multi_result(results)
 
 # ── Mostrar resultado x1 ───────────────────────────────────────────
-func _show_single_result(hero: Dictionary) -> void:
-	_is_pulling = true
-	multi_panel.visible = false
-	hero_card.visible   = false
-
-	# Rellena la carta
-	rarity_label.text       = GachaSystem.get_rarity_name(hero["rarity"]).to_upper()
-	rarity_label.add_theme_color_override("font_color", GachaSystem.get_rarity_color(hero["rarity"]))
-	hero_color.color        = hero["color"]
-	hero_name.text          = hero["name"]
-	hero_desc.text          = hero["desc"]
-	atk_label.text          = "ATK: %d" % hero["atk"]
-	hp_label.text           = "HP: %d"  % hero["hp"]
+func _show_single_result(hero: HeroData) -> void:
+	rarity_label.text  = GachaSystem.get_rarity_name(hero.rarity).to_upper()
+	hero_color.color   = hero.color
+	hero_name.text     = hero.hero_name
+	hero_desc.text     = hero.desc
+	atk_label.text     = "ATK: %d" % hero.atk
+	hp_label.text      = "HP: %d"  % hero.hp
 
 	# Animación de entrada
 	hero_card.modulate.a = 0.0
@@ -121,7 +115,7 @@ func _make_mini_card(hero: Dictionary) -> PanelContainer:
 	card.custom_minimum_size = Vector2(200, 160)
 
 	var vbox := VBoxContainer.new()
-	vbox.theme_override_constants_separation = 6
+	vbox.add_theme_constant_override("separation", 6)  # ← corregido
 	card.add_child(vbox)
 
 	var color_rect := ColorRect.new()
