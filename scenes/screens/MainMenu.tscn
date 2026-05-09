@@ -46,12 +46,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -242.0
-offset_top = -287.00006
-offset_right = 1117.0
-offset_bottom = 1376.0
+offset_left = -308.0
+offset_top = -261.0
+offset_right = 1051.0
+offset_bottom = 1402.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.44755843, 0.34836408)
 theme_override_constants/separation = 24
 alignment = 1
 
